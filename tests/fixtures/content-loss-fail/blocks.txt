@@ -1,0 +1,9 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"ls_01","columns":1,"colLayout":"equal","align":"full","kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"ls_02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columnls_02"><div class="kt-inside-inner-col">
+<!-- wp:kadence/advancedheading {"uniqueID":"ls_03","level":1} -->
+<h1 class="kt-adv-headingls_03 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingls_03">Primary Header</h1>
+<!-- /wp:kadence/advancedheading -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

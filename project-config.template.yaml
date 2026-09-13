@@ -1,8 +1,10 @@
-# HTML → Kadence — Project Configuration
-# Copy to: .cursor/html-to-kadence/project.yaml
+# HTML → Kadence — Project Configuration (v1.1.0)
+# Primary location: .html-to-kadence/project.yaml
+# Legacy fallback:  .cursor/html-to-kadence/project.yaml
 # Fill all REQUIRED fields before first conversion.
 
-framework_version: "1.0.0"
+framework_version: "1.1.0"
+config_schema_version: "1.1"
 project_overlay_version: 1
 
 # --- Site identity ---
@@ -56,6 +58,36 @@ conversion:
   allow_custom_html: false
   require_clone_source: true
 
+# --- QA & Gating Configuration ---
+qa:
+  enabled: true
+  auto_repair: true
+  max_repair_rounds: 3
+  gates:
+    structural: 100
+    content: 98
+    accessibility: 90
+    runtime: 100
+    visual: 90
+    overall: 92
+  visual:
+    enabled: false        # Set true in browser integration environment
+    viewports:
+      desktop: 1440
+      tablet: 768
+      mobile: 390
+    thresholds:
+      desktop: 0.92
+      tablet: 0.90
+      mobile: 0.90
+
+# --- WordPress Safety & Concurrency ---
+wordpress:
+  optimistic_concurrency: true
+  backup_before_write: true
+  round_trip_validation: true
+  publish_policy: draft_first # 'draft_first' | 'direct'
+
 # --- Agent registry (extend by adding entries) ---
 agents:
   core:
@@ -85,4 +117,7 @@ docs:
   full_mapping: docs/kadence-html-mapping.md
   architecture: docs/architecture.md
   business_rules: docs/business-rules.md
+  qa_pipeline: docs/qa-pipeline.md
+  wordpress_safety: docs/wordpress-safety.md
+  compatibility: docs/kadence-compatibility.md
   pipeline: .cursor/workflows/html-to-kadence-pipeline.md

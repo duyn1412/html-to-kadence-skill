@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kadence AI Validator
  * Description: REST endpoint for validating Kadence/Gutenberg block markup before publish (used by Cursor HTML-to-Kadence pipeline).
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Coast Residences
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'KADENCE_AI_VALIDATOR_VERSION', '1.0.0' );
+define( 'KADENCE_AI_VALIDATOR_VERSION', '1.1.0' );
 define( 'KADENCE_AI_VALIDATOR_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once KADENCE_AI_VALIDATOR_PATH . 'includes/class-block-validator.php';

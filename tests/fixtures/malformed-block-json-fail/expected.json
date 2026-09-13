@@ -1,0 +1,6 @@
+{
+  "status": "fail",
+  "expected_errors": [
+    "BLOCK_JSON_INVALID"
+  ]
+}

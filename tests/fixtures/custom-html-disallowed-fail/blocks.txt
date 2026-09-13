@@ -1,0 +1,9 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"ch_01","columns":1,"colLayout":"equal","align":"full","kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"ch_02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columnch_02"><div class="kt-inside-inner-col">
+<!-- wp:html -->
+<div class="custom-widget"><h2>Raw HTML Title</h2></div>
+<!-- /wp:html -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

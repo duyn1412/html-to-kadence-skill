@@ -1,0 +1,12 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"pl_01","columns":1,"colLayout":"equal","align":"full","kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"pl_02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columnpl_02"><div class="kt-inside-inner-col">
+<!-- wp:kadence/advancedheading {"uniqueID":"pl_03","level":1} -->
+<h1 class="kt-adv-headingpl_03 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingpl_03">TODO: Add headline</h1>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/advancedheading {"uniqueID":"pl_04","htmlTag":"p"} -->
+<p class="kt-adv-headingpl_04 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingpl_04">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+<!-- /wp:kadence/advancedheading -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

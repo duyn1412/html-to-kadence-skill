@@ -59,7 +59,7 @@ rest:
     }
   ],
   "warnings": [],
-  "plugin_version": "1.0.0",
+  "plugin_version": "1.1.0",
   "validated_at": "2026-07-03T03:00:00+00:00"
 }
 ```

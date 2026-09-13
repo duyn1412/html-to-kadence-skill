@@ -30,7 +30,7 @@ Convert this HTML to Kadence blocks using the html-to-kadence skill.
 ```bash
 cd /path/to/wordpress-project
 bash ~/.cursor/skills/html-to-kadence/scripts/init-project.sh
-# edit .cursor/html-to-kadence/project.yaml
+# edit .html-to-kadence/project.yaml (or .cursor/html-to-kadence/project.yaml)
 ```
 
 ## Antigravity / other agents
@@ -64,7 +64,7 @@ Then in your agent instruction / AGENTS.md:
 ```markdown
 ## HTML → Kadence
 Read `.agents/html-to-kadence/SKILL.md` first.
-Project overlay: `.cursor/html-to-kadence/project.yaml`
+Project overlay: `.html-to-kadence/project.yaml (or .cursor/html-to-kadence/project.yaml)`
 ```
 
 ### Option C — One-shot (no install)
@@ -82,7 +82,7 @@ https://raw.githubusercontent.com/duyn1412/html-to-kadence-skill/main/SKILL.md
 
 1. **`SKILL.md`** — orchestrator (always first)
 2. **`reference.md`** — pipeline + mapping defaults
-3. Project overlay **`.cursor/html-to-kadence/project.yaml`** if present
+3. Project overlay **`.html-to-kadence/project.yaml (or .cursor/html-to-kadence/project.yaml)`** if present
 4. Agent skills under `template/skills/` (or project `.cursor/skills/`)
 
 ## Optional — Kadence AI Validator plugin
@@ -94,7 +94,7 @@ bash scripts/install-validator-plugin.sh /path/to/wp-content/plugins
 # WP Admin → Plugins → Activate Kadence AI Validator
 ```
 
-Then in `.cursor/html-to-kadence/project.yaml`:
+Then in `.html-to-kadence/project.yaml (or .cursor/html-to-kadence/project.yaml)`:
 
 ```yaml
 rest:

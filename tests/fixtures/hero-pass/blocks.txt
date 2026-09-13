@@ -1,0 +1,15 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"101_1a2b3c-01","columns":1,"colLayout":"equal","align":"full","kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"101_1a2b3c-02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-column101_1a2b3c-02"><div class="kt-inside-inner-col">
+<!-- wp:kadence/advancedheading {"uniqueID":"101_1a2b3c-03","level":1,"colorClass":"theme-palette1"} -->
+<h1 class="kt-adv-heading101_1a2b3c-03 wp-block-kadence-advancedheading has-theme-palette-1-color has-text-color" data-kb-block="kb-adv-heading101_1a2b3c-03">Welcome to Desert Oasis</h1>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/advancedheading {"uniqueID":"101_1a2b3c-04","htmlTag":"p","colorClass":"theme-palette4"} -->
+<p class="kt-adv-heading101_1a2b3c-04 wp-block-kadence-advancedheading has-theme-palette-4-color has-text-color" data-kb-block="kb-adv-heading101_1a2b3c-04">A luxury retreat in Palm Springs with private pool and mountain views.</p>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/advancedbtn {"uniqueID":"101_1a2b3c-05"} -->
+<div class="wp-block-kadence-advancedbtn kb-buttons-wrap kb-btns101_1a2b3c-05"><!-- wp:kadence/singlebtn {"uniqueID":"101_1a2b3c-06","text":"Book Your Stay","link":"https://desertoasisretreat.com/booking"} /--></div>
+<!-- /wp:kadence/advancedbtn -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

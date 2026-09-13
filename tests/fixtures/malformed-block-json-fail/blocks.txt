@@ -1,0 +1,6 @@
+<!-- wp:kadence/rowlayout {"uniqueID": malformed_json_unquoted} -->
+<!-- wp:kadence/column {"uniqueID":"mal_02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columnmal_02"><div class="kt-inside-inner-col">
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
-# Initialize HTML→Kadence framework in a WordPress project.
+# Initialize HTML→Kadence framework (v1.1.0) in a WordPress project.
 #
-# Usage (submodule):
-#   bash packages/html-to-kadence-framework/scripts/init-project.sh
-#   bash packages/html-to-kadence-framework/scripts/init-project.sh /path/to/project
-#
-# Usage (personal skill):
-#   bash ~/.cursor/skills/html-to-kadence/scripts/init-project.sh
+# Usage:
+#   bash /path/to/html-to-kadence-skill/scripts/init-project.sh [project_root]
 
 set -euo pipefail
 
@@ -20,7 +16,7 @@ if [[ ! -d "$PACKAGE_ROOT/template" ]]; then
   exit 1
 fi
 
-echo "HTML→Kadence init"
+echo "HTML→Kadence v1.1.0 init"
 echo "  package: $PACKAGE_ROOT"
 echo "  project: $PROJECT_ROOT"
 echo ""
@@ -42,25 +38,36 @@ copy_tree() {
   done
 }
 
+# 1. Copy agent skills and templates to .cursor (if using Cursor)
 copy_tree "$PACKAGE_ROOT/template" "$PROJECT_ROOT/.cursor"
 
-mkdir -p "$PROJECT_ROOT/.cursor/html-to-kadence"
-if [[ ! -f "$PROJECT_ROOT/.cursor/html-to-kadence/project.yaml" ]]; then
+# 2. Tool-neutral primary project overlay (.html-to-kadence/)
+mkdir -p "$PROJECT_ROOT/.html-to-kadence"
+if [[ ! -f "$PROJECT_ROOT/.html-to-kadence/project.yaml" ]]; then
   cp "$PACKAGE_ROOT/project-config.template.yaml" \
-     "$PROJECT_ROOT/.cursor/html-to-kadence/project.yaml"
-  echo "  created: .cursor/html-to-kadence/project.yaml (EDIT REQUIRED FIELDS)"
+     "$PROJECT_ROOT/.html-to-kadence/project.yaml"
+  echo "  created: .html-to-kadence/project.yaml (EDIT REQUIRED FIELDS)"
 else
-  echo "  skip (exists): .cursor/html-to-kadence/project.yaml"
+  echo "  skip (exists): .html-to-kadence/project.yaml"
 fi
 
-mkdir -p "$PROJECT_ROOT/scripts"
-cp "$PACKAGE_ROOT/scripts/validate-blocks.py" "$PROJECT_ROOT/scripts/validate-blocks.py"
-chmod +x "$PROJECT_ROOT/scripts/validate-blocks.py"
-echo "  created: scripts/validate-blocks.py"
+# Cursor backward-compatibility link
+if [[ ! -e "$PROJECT_ROOT/.cursor/html-to-kadence" ]]; then
+  ln -s ../.html-to-kadence "$PROJECT_ROOT/.cursor/html-to-kadence" 2>/dev/null || cp -r "$PROJECT_ROOT/.html-to-kadence" "$PROJECT_ROOT/.cursor/html-to-kadence"
+  echo "  linked: .cursor/html-to-kadence -> .html-to-kadence"
+fi
 
+# 3. Copy QA Engine & Validator scripts
+mkdir -p "$PROJECT_ROOT/scripts"
+cp "$PACKAGE_ROOT/scripts/qa-engine.py" "$PROJECT_ROOT/scripts/qa-engine.py"
+cp "$PACKAGE_ROOT/scripts/validate-blocks.py" "$PROJECT_ROOT/scripts/validate-blocks.py"
+chmod +x "$PROJECT_ROOT/scripts/qa-engine.py" "$PROJECT_ROOT/scripts/validate-blocks.py"
+echo "  created: scripts/qa-engine.py and scripts/validate-blocks.py"
+
+# 4. Initialize documentation
 mkdir -p "$PROJECT_ROOT/docs"
 if [[ ! -f "$PROJECT_ROOT/docs/kadence-html-mapping.md" ]]; then
-  cat > "$PROJECT_ROOT/docs/kadence-html-mapping.md" << 'EOF'
+  cat > "$PROJECT_ROOT/docs/kadence-html-mapping.md" << 'INNER_EOF'
 # Kadence HTML Mapping
 
 Project-specific HTML → Kadence block mapping. Fill after bootstrap.
@@ -81,14 +88,14 @@ Document reusable row patterns found on reference pages.
 
 ## Learnings
 
-Move repeatable rules to `.cursor/html-to-kadence/project.yaml` → `learnings`.
-EOF
+Move repeatable rules to `.html-to-kadence/project.yaml` → `learnings`.
+INNER_EOF
   echo "  created: docs/kadence-html-mapping.md"
 fi
 
 echo ""
 echo "Done. Next steps:"
 echo "  1. bash $PACKAGE_ROOT/scripts/link-skill.sh"
-echo "  2. Edit .cursor/html-to-kadence/project.yaml"
+echo "  2. Edit .html-to-kadence/project.yaml"
 echo "  3. Create .credentials/wordpress-api.env"
 echo "  4. Invoke: 'Convert HTML using html-to-kadence skill'"

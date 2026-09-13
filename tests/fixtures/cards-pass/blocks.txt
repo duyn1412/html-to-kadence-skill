@@ -1,0 +1,22 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"cd_01","columns":2,"colLayout":"equal","align":"full","kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"cd_02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columncd_02"><div class="kt-inside-inner-col">
+<!-- wp:kadence/advancedheading {"uniqueID":"cd_00","level":1} -->
+<h1 class="kt-adv-headingcd_00 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingcd_00">Property Features</h1>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/advancedheading {"uniqueID":"cd_03","level":2} -->
+<h2 class="kt-adv-headingcd_03 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingcd_03">Amenities</h2>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/advancedheading {"uniqueID":"cd_04","htmlTag":"p"} -->
+<p class="kt-adv-headingcd_04 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingcd_04">Private Pool</p>
+<!-- /wp:kadence/advancedheading -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- wp:kadence/column {"uniqueID":"cd_05","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columncd_05"><div class="kt-inside-inner-col">
+<!-- wp:kadence/advancedheading {"uniqueID":"cd_06","htmlTag":"p"} -->
+<p class="kt-adv-headingcd_06 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingcd_06">Spa & Hot Tub</p>
+<!-- /wp:kadence/advancedheading -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

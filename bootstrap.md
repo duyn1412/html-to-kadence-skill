@@ -29,7 +29,7 @@ Or manually copy:
 
 ```bash
 cp ~/.cursor/skills/html-to-kadence/project-config.template.yaml \
-   .cursor/html-to-kadence/project.yaml
+   .html-to-kadence/project.yaml (or .cursor/html-to-kadence/project.yaml)
 ```
 
 Edit `project.yaml` — fill every `REQUIRED` field.
@@ -49,7 +49,7 @@ Add to project `.cursor/rules/project.mdc` (or equivalent):
 ## HTML → Kadence
 
 For HTML conversion, use skill `html-to-kadence` and read:
-1. `.cursor/html-to-kadence/project.yaml`
+1. `.html-to-kadence/project.yaml (or .cursor/html-to-kadence/project.yaml)`
 2. `.cursor/workflows/html-to-kadence-pipeline.md`
 3. `docs/kadence-html-mapping.md`
 ```

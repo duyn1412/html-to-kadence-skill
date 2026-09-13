@@ -1,0 +1,6 @@
+{
+  "status": "fail",
+  "expected_errors": [
+    "CONTENT_LOST"
+  ]
+}

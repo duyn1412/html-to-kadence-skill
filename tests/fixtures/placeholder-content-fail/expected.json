@@ -1,0 +1,6 @@
+{
+  "status": "fail",
+  "expected_errors": [
+    "PLACEHOLDER_DETECTED"
+  ]
+}

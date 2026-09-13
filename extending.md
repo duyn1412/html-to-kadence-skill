@@ -93,7 +93,7 @@ Keep the **full** mapping here (can be long). Framework `reference.md` stays gen
 Track framework version in `project.yaml`:
 
 ```yaml
-framework_version: "1.0.0"   # skill package version
+framework_version: "1.1.0"   # skill package version
 project_overlay_version: "3" # increment when learnings/rules change
 ```
 

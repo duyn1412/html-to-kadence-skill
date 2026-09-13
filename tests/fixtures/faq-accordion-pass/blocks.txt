@@ -1,0 +1,23 @@
+<!-- wp:kadence/rowlayout {"uniqueID":"fq_01","columns":1,"colLayout":"equal","align":"full","kbVersion":2} -->
+<!-- wp:kadence/column {"uniqueID":"fq_02","borderWidth":["","","",""],"kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columnfq_02"><div class="kt-inside-inner-col">
+<!-- wp:kadence/advancedheading {"uniqueID":"fq_00","level":1} -->
+<h1 class="kt-adv-headingfq_00 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingfq_00">Frequently Asked Questions</h1>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/advancedheading {"uniqueID":"fq_03","level":2} -->
+<h2 class="kt-adv-headingfq_03 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingfq_03">Check-in Guidelines</h2>
+<!-- /wp:kadence/advancedheading -->
+<!-- wp:kadence/accordion {"uniqueID":"fq_04","paneCount":1} -->
+<div class="wp-block-kadence-accordion alignnone"><div class="kt-accordion-wrap kt-accordion-idfq_04"><div class="kt-accordion-inner-wrap">
+<!-- wp:kadence/pane {"uniqueID":"fq_05"} -->
+<div class="wp-block-kadence-pane kt-accordion-pane kt-pane_fq_05"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header" type="button"><span class="kt-blocks-accordion-title">What is check-in time?</span></button></div><div class="kt-accordion-panel"><div class="kt-accordion-panel-inner">
+<!-- wp:kadence/advancedheading {"uniqueID":"fq_06","htmlTag":"p"} -->
+<p class="kt-adv-headingfq_06 wp-block-kadence-advancedheading" data-kb-block="kb-adv-headingfq_06">Check in is 3 PM.</p>
+<!-- /wp:kadence/advancedheading -->
+</div></div></div>
+<!-- /wp:kadence/pane -->
+</div></div></div>
+<!-- /wp:kadence/accordion -->
+</div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout -->

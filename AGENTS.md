@@ -1,37 +1,44 @@
-# AGENTS.md — HTML → Kadence
+# AGENTS.md — HTML → Kadence Framework (v1.1.0)
 
-This repository is a **portable agent skill**. Any coding agent should treat
-`SKILL.md` as the single entrypoint.
+This repository is a **portable agent skill**. Any AI coding agent (Cursor, Antigravity, Claude Code, Codex) should treat `SKILL.md` as the primary entrypoint.
 
 ## Entrypoint
 
 Read and follow: [`SKILL.md`](./SKILL.md)
 
-## When to use
+## Core Philosophy
 
-User asks to:
+```
+Analyze ──► Convert ──► QA Engine ──► PASS? ──► [Ready to publish]
+                            │
+                          [FAIL]
+                            │
+                            ▼
+     Diagnose ──► Repair smallest scope ──► Re-run QA (max 3)
+```
 
-- Convert HTML / mockups / design files into WordPress Kadence blocks
-- Generate `<!-- wp:kadence/... -->` Gutenberg markup
-- Bootstrap an HTML→Kadence workflow in a new WP project
+> **Non-Negotiable**: **QA IS A GATE, NOT A REPORT.**  
+> Never mark a conversion as complete or deliver markup without running and passing all mandatory QA gates. Never silently ignore or downgrade QA errors.
 
-## Hard rules
+## Hard Rules
 
-1. Native Kadence blocks only — no Custom HTML unless documented exception
-2. Clone structure from the project’s reference page — do not invent layouts
-3. Validate markup before publish
-4. Never auto-publish — deliver markup unless the user explicitly asks to publish
-5. Before overwriting an existing page: `GET` live content first (page-update safety)
-6. Never commit `.credentials/` or API passwords
+1. **Native Kadence Blocks Only**: No `core/html` or raw Custom HTML dumps.
+2. **Zero Placeholder Tolerance**: Never leave `TODO`, `FIXME`, `example.com`, `lorem ipsum`, or `href="#"` in generated blocks.
+3. **Mandatory QA Gate**: Run `python3 scripts/qa-engine.py`; require Structural = 100, Content $\ge 98$, and zero critical errors.
+4. **Targeted Repair**: When QA fails, repair the smallest affected block scope. Do not regenerate the entire page.
+5. **Never Auto-Publish**: Deliver block markup and formal QA sign-off report unless the user explicitly requests publish.
+6. **Optimistic Concurrency & Safety**: Always `GET` live content first. Abort with `LIVE_CONTENT_CHANGED_ABORTED` if live content changed prior to write.
+7. **Credentials Isolation**: Never commit `.credentials/` or API passwords.
 
-## Suggested load order
+## Suggested Load Order for Agents
 
-1. `SKILL.md`
-2. `reference.md`
-3. Project `.cursor/html-to-kadence/project.yaml` (if exists)
-4. Relevant `template/skills/*/SKILL.md` (or project overrides in `.cursor/skills/`)
-5. `template/docs/kadence-markup-validation.md` before finalizing markup
+1. [`SKILL.md`](./SKILL.md) — Orchestration & workflow entrypoint
+2. Project Configuration: Check `.html-to-kadence/project.yaml` (primary) or `.cursor/html-to-kadence/project.yaml` (legacy fallback)
+3. [`docs/qa-pipeline.md`](./docs/qa-pipeline.md) — The 9 QA stages, scoring rules, and error codes
+4. [`docs/wordpress-safety.md`](./docs/wordpress-safety.md) — Optimistic concurrency and round-trip validation
+5. [`docs/kadence-compatibility.md`](./docs/kadence-compatibility.md) — Block slug vs editor UI terminology mapping
+6. [`reference.md`](./reference.md) — Pipeline details and block mapping reference
 
-## Install
+## Installation
 
-See [`INSTALL.md`](./INSTALL.md) for Cursor, Antigravity, and other agents.
+See [`INSTALL.md`](./INSTALL.md) for setup across Cursor, Antigravity, Claude Code, and other agent platforms.

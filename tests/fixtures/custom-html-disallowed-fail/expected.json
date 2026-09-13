@@ -1,0 +1,6 @@
+{
+  "status": "fail",
+  "expected_errors": [
+    "CUSTOM_HTML_NOT_ALLOWED"
+  ]
+}
