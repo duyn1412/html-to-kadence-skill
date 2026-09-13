@@ -1,0 +1,40 @@
+---
+description: Orchestrate HTML-to-Kadence conversion using the project framework
+alwaysApply: false
+---
+
+# HTML → Kadence Conversion Framework
+
+When the user supplies HTML to convert into Kadence blocks:
+
+1. Read `.cursor/html-to-kadence/project.yaml` — **required**
+2. Read `.cursor/workflows/html-to-kadence-pipeline.md`
+3. Read `docs/kadence-html-mapping.md`
+4. Read `.cursor/docs/kadence-markup-validation.md` — **mandatory**
+5. Load skill `html-to-kadence` from `~/.cursor/skills/html-to-kadence/SKILL.md`
+
+## Core agents (run in order)
+
+| Step | Agent | Skill |
+|------|-------|-------|
+| 1–6 | Kadence Architect | `.cursor/skills/kadence-architect/SKILL.md` |
+| 7–8 | Design System Extractor | `.cursor/skills/design-system-extractor/SKILL.md` |
+| 9 | HTML Analyzer | `.cursor/skills/html-analyzer/SKILL.md` |
+| 10 | Pattern Finder | `.cursor/skills/pattern-finder/SKILL.md` |
+| 11–12 | Kadence Block Composer | `.cursor/skills/kadence-block-composer/SKILL.md` |
+| 13–16 | QA Reviewer | `.cursor/skills/qa-reviewer/SKILL.md` |
+| 17 | REST Publisher | `.cursor/skills/rest-publisher/SKILL.md` |
+
+## Non-negotiables
+
+- Read `project.yaml` → `learnings` before every conversion
+- Clone from `pages.clone_source` — do not invent block JSON
+- Native Kadence blocks only (see `conversion.allow_custom_html`)
+- Never publish unless user explicitly requests
+- `GET` current page content before any `PUT` that replaces `content`
+
+## Outputs
+
+1. Block markup (`<!-- wp:kadence/... -->`)
+2. Conversion report (mapping, tokens, QA summary)
+3. Optional publish report

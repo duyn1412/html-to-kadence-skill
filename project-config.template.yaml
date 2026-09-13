@@ -1,0 +1,88 @@
+# HTML → Kadence — Project Configuration
+# Copy to: .cursor/html-to-kadence/project.yaml
+# Fill all REQUIRED fields before first conversion.
+
+framework_version: "1.0.0"
+project_overlay_version: 1
+
+# --- Site identity ---
+site:
+  name: REQUIRED          # e.g. "My Client Site"
+  staging_url: REQUIRED   # e.g. https://staging.example.com
+  wp_content_path: REQUIRED  # e.g. wp-content/ or coastbygmcdev/wp-content/
+
+# --- Theme stack ---
+theme:
+  parent: kadence
+  child: REQUIRED         # e.g. kadence-child
+  content_width: 1290     # px — from theme.json or live CSS
+
+# --- Reference pages (REST IDs) ---
+pages:
+  clone_source: REQUIRED  # Primary pattern library (usually Home), e.g. 9
+  header_element: null    # Kadence Element CPT ID if applicable
+  footer_element: null
+  # Add more pattern sources:
+  # patterns:
+  #   hero: 9
+  #   two_column: 9
+  #   register: 9
+
+# --- Design tokens (discover from live site / Customizer) ---
+design_system:
+  palette:
+    # slot: hex — map Customizer Global Palette slots 1–9
+    palette1: "#000000"
+    palette2: "#000000"
+    # ... palette9
+  fonts:
+    display: REQUIRED     # e.g. prns, Parnas Sans
+    ui: REQUIRED          # e.g. nrd, Nord
+    body: REQUIRED        # e.g. Spectral
+  buttons:
+    border_radius: [0, 0, 0, 0]
+    pattern_class: d-btn  # clone button class from reference page
+
+# --- REST API ---
+rest:
+  credentials_file: .credentials/wordpress-api.env
+  validate_endpoint: null  # e.g. /kadence-ai/v1/validate — null if not installed
+  user_agent: REQUIRED    # full browser UA if host blocks default curl
+
+# --- Conversion defaults ---
+conversion:
+  unique_id_format: "{pageId}_{8hex}"
+  default_publish_status: draft
+  allow_custom_html: false
+  require_clone_source: true
+
+# --- Agent registry (extend by adding entries) ---
+agents:
+  core:
+    - kadence-architect
+    - html-analyzer
+    - kadence-block-composer
+    - qa-reviewer
+    - rest-publisher
+  supporting:
+    - design-system-extractor
+    - pattern-finder
+    - responsive-optimizer
+    - accessibility-reviewer
+    - seo-reviewer
+    - performance-reviewer
+
+# --- Project learnings (append after each conversion) ---
+# Agents MUST read this section before composing markup.
+learnings: []
+  # - id: example-rule
+  #   date: 2026-01-01
+  #   rule: "Description of what was learned"
+  #   source: "Page X conversion failure"
+
+# --- Docs map (paths relative to project root) ---
+docs:
+  full_mapping: docs/kadence-html-mapping.md
+  architecture: docs/architecture.md
+  business_rules: docs/business-rules.md
+  pipeline: .cursor/workflows/html-to-kadence-pipeline.md

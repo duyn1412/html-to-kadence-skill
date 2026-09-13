@@ -1,0 +1,6 @@
+.DS_Store
+.credentials/
+*.env
+*.pem
+.idea/
+.vscode/
