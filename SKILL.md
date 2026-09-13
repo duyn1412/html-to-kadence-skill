@@ -82,3 +82,8 @@ If project skills missing, use defaults in [reference.md](reference.md).
 > Convert this HTML to Kadence blocks using the html-to-kadence skill.
 
 Or: `@.cursor/workflows/html-to-kadence-pipeline.md` (after bootstrap).
+
+## Install (other agents)
+
+See [INSTALL.md](INSTALL.md) and [AGENTS.md](AGENTS.md) for Cursor, Antigravity,
+and other agents: https://github.com/duyn1412/html-to-kadence-skill
