@@ -39,9 +39,9 @@ Task Progress:
 - [ ] 2. HTML Analyzer → section tree
 - [ ] 3. Pattern Finder → reuse matches from clone_source_page
 - [ ] 4. Block Composer → clone live markup, replace content
-- [ ] 5. Validate (checklist + optional REST endpoint)
-- [ ] 6. QA (responsive, a11y, SEO, performance)
-- [ ] 7. Deliver markup (+ publish only if requested)
+- [ ] 5. Automated Block Validation → run scripts/validate-blocks.py (Zero errors required)
+- [ ] 6. Structured QA Review → 5 Quality Gates (Markup, Fidelity, Responsive, A11y/SEO, Live)
+- [ ] 7. Deliver block markup + QA Sign-off Report (+ publish only if requested)
 ```
 
 ## Core agents (read project skills if present)
@@ -51,7 +51,7 @@ Task Progress:
 | Kadence Architect | `.cursor/skills/kadence-architect/SKILL.md` | Theme, blocks, child theme |
 | HTML Analyzer | `.cursor/skills/html-analyzer/SKILL.md` | Parse HTML → section tree |
 | Block Composer | `.cursor/skills/kadence-block-composer/SKILL.md` | Generate block markup |
-| QA Reviewer | `.cursor/skills/qa-reviewer/SKILL.md` | Quality gates |
+| QA Reviewer | `.cursor/skills/qa-reviewer/SKILL.md` | 5 Quality gates & sign-off report |
 | REST Publisher | `.cursor/skills/rest-publisher/SKILL.md` | Read/write WordPress |
 
 If project skills missing, use defaults in [reference.md](reference.md).
@@ -60,15 +60,17 @@ If project skills missing, use defaults in [reference.md](reference.md).
 
 1. **Native Kadence blocks** — no Custom HTML unless documented exception
 2. **Clone, don't invent** — copy structure from `clone_source_page` in project.yaml
-3. **Validate before publish** — markup checklist + optional `POST /kadence-ai/v1/validate` (plugin in `wordpress-plugin/kadence-ai-validator/`)
-4. **Never auto-publish** — deliver markup unless user explicitly requests publish
-5. **Page update safety** — `GET` current content before any `PUT` that replaces `content`
+3. **Mandatory Automated Validation** — run `scripts/validate-blocks.py` with 0 errors required
+4. **Formal QA Sign-off Report** — every deliverable must include the structured 5-gate QA evaluation table
+5. **Never auto-publish** — deliver markup unless user explicitly requests publish
+6. **Page update safety** — `GET` current content before any `PUT` that replaces `content`
 
 ## Outputs
 
 1. **Block Markup** — raw `post_content` with `<!-- wp:kadence/... -->`
-2. **Conversion Report** — mapping table, tokens, clone sources, QA summary
-3. **Publish Report** — only when user requested publish
+2. **QA Sign-off Report** — formal 5-gate QA evaluation table (Markup, Fidelity, Responsive, A11y, Live)
+3. **Conversion Report** — mapping table, tokens, clone sources, QA summary
+4. **Publish Report** — only when user requested publish
 
 ## Extend this framework
 

@@ -53,6 +53,11 @@ else
   echo "  skip (exists): .cursor/html-to-kadence/project.yaml"
 fi
 
+mkdir -p "$PROJECT_ROOT/scripts"
+cp "$PACKAGE_ROOT/scripts/validate-blocks.py" "$PROJECT_ROOT/scripts/validate-blocks.py"
+chmod +x "$PROJECT_ROOT/scripts/validate-blocks.py"
+echo "  created: scripts/validate-blocks.py"
+
 mkdir -p "$PROJECT_ROOT/docs"
 if [[ ! -f "$PROJECT_ROOT/docs/kadence-html-mapping.md" ]]; then
   cat > "$PROJECT_ROOT/docs/kadence-html-mapping.md" << 'EOF'
