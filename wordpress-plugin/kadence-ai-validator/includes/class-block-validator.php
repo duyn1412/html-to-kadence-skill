@@ -21,6 +21,18 @@ class Kadence_AI_Validator_Block_Validator {
 		'kbVersion',
 		'kadenceConditional',
 		'kadenceBlock',
+		'fontFamily',
+		'marginUnit',
+		'paddingUnit',
+		'tabletMargin',
+		'mobileMargin',
+		'tabletPadding',
+		'mobilePadding',
+		'fontWeight',
+		'fontStyle',
+		'textTransform',
+		'letterSpacing',
+		'lineHeight',
 	);
 
 	/** @var array<int, array<string, mixed>> */
@@ -111,13 +123,18 @@ class Kadence_AI_Validator_Block_Validator {
 
 		$registry = WP_Block_Type_Registry::get_instance();
 
-		if ( ! $registry->is_registered( $name ) ) {
+		$client_only_blocks = array(
+			'kadence/pane',
+			'kadence/tab',
+		);
+
+		if ( ! $registry->is_registered( $name ) && ! in_array( $name, $client_only_blocks, true ) ) {
 			$this->errors[] = array(
 				'block'   => $name,
 				'message' => 'Block type is not registered — plugin may be inactive',
 				'path'    => $path,
 			);
-		} else {
+		} elseif ( $registry->is_registered( $name ) ) {
 			$this->validate_attributes( $name, $block, $path, $registry->get_registered( $name ) );
 		}
 
