@@ -60,7 +60,7 @@ If project skills missing, use defaults in [reference.md](reference.md).
 
 1. **Native Kadence blocks** — no Custom HTML unless documented exception
 2. **Clone, don't invent** — copy structure from `clone_source_page` in project.yaml
-3. **Validate before publish** — run markup checklist; use REST validate if available
+3. **Validate before publish** — markup checklist + optional `POST /kadence-ai/v1/validate` (plugin in `wordpress-plugin/kadence-ai-validator/`)
 4. **Never auto-publish** — deliver markup unless user explicitly requests publish
 5. **Page update safety** — `GET` current content before any `PUT` that replaces `content`
 

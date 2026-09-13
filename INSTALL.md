@@ -85,6 +85,24 @@ https://raw.githubusercontent.com/duyn1412/html-to-kadence-skill/main/SKILL.md
 3. Project overlay **`.cursor/html-to-kadence/project.yaml`** if present
 4. Agent skills under `template/skills/` (or project `.cursor/skills/`)
 
+## Optional — Kadence AI Validator plugin
+
+Server-side block validation used by the pipeline gate before publish.
+
+```bash
+bash scripts/install-validator-plugin.sh /path/to/wp-content/plugins
+# WP Admin → Plugins → Activate Kadence AI Validator
+```
+
+Then in `.cursor/html-to-kadence/project.yaml`:
+
+```yaml
+rest:
+  validate_endpoint: /kadence-ai/v1/validate
+```
+
+API: [docs/kadence-ai-validate-endpoint.md](docs/kadence-ai-validate-endpoint.md)
+
 ## Credentials (never commit)
 
 ```

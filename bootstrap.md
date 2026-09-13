@@ -74,8 +74,18 @@ WP_APP_PASSWORD=xxxx xxxx xxxx xxxx
 
 Never commit credentials.
 
-## Optional — Kadence validate endpoint
+## Optional — Kadence AI Validator plugin
 
-If child theme exposes `POST /kadence-ai/v1/validate`, document URL in
-`project.yaml` → `rest.validate_endpoint`. See Coast reference implementation
-in `inc/kadence-validate-api.php` pattern.
+```bash
+bash scripts/install-validator-plugin.sh /path/to/wp-content/plugins
+# WP Admin → Plugins → Activate Kadence AI Validator
+```
+
+Document in `project.yaml`:
+
+```yaml
+rest:
+  validate_endpoint: /kadence-ai/v1/validate
+```
+
+API: [docs/kadence-ai-validate-endpoint.md](docs/kadence-ai-validate-endpoint.md)

@@ -27,13 +27,28 @@ html-to-kadence-skill/
 ├── project-config.template.yaml
 ├── scripts/
 │   ├── init-project.sh
-│   └── link-skill.sh
+│   ├── link-skill.sh
+│   └── install-validator-plugin.sh
+├── wordpress-plugin/
+│   └── kadence-ai-validator/     # REST validate endpoint (optional)
+├── docs/
+│   └── kadence-ai-validate-endpoint.md
 └── template/                     # Copied into project .cursor/
     ├── rules/
     ├── skills/                   # 5 core agents
     ├── docs/
     └── workflows/
 ```
+
+## Optional: validate plugin
+
+Install into WordPress, then activate **Kadence AI Validator**:
+
+```bash
+bash scripts/install-validator-plugin.sh /path/to/wp-content/plugins
+```
+
+Endpoint: `POST /wp-json/kadence-ai/v1/validate` — see [docs/kadence-ai-validate-endpoint.md](docs/kadence-ai-validate-endpoint.md).
 
 ## Architecture
 
@@ -52,7 +67,7 @@ html-to-kadence-skill/
 
 ## Version
 
-1.0.1 — packaged for GitHub / multi-agent use (2026-09-13)  
+1.0.2 — includes `kadence-ai-validator` WordPress plugin (2026-09-13)  
 Originally extracted from a production Coast Residences Kadence build (2026-07).
 
 ## License
